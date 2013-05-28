@@ -1,0 +1,47 @@
+#!/bin/bash
+
+# emacs as default editor.
+export EDITOR="emacs -nw"
+
+# go-lang
+export PATH="$PATH:$HOME/Projects/others/go/bin"
+
+# mongodb
+export PATH="$PATH:/opt/mongodb/mongodb-linux-x86_64-2.0.2/bin"
+
+export JAVA_HOME="/usr/lib/jvm/jdk1.7.0/"
+export PATH="$PATH:/usr/lib/jvm/jdk1.7.0/bin"
+
+# export PATH="$PATH:/opt/idea/idea-IU-117.798/bin"
+export PATH="$PATH:/opt/apache/apache-ant-1.8.4/bin"
+export PATH="$PATH:/opt/apache/apache-maven-3.0.4/bin"
+
+# virtualenvwrapper settings.
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
+
+# Add RVM to PATH for scripting
+[[ -s "/home/csharma/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# hbase
+export HBASE_HOME="/opt/apache/hbase-0.94.1"
+export HBASE_CLASSPATH=`$HBASE_HOME/bin/hbase classpath`
+export PATH="$PATH:$HBASE_HOME/bin"
+
+# hadoop
+# export PATH="$PATH:/opt/apache/hadoop-1.0.1/bin/"
+
+# pig
+# export PATH="$PATH:/opt/apache/pig-0.10.0/bin/"
+# export PIG_CLASSPATH=$HBASE_CLASSPATH:$PIG_CLASSPATH
+
+# alias
+alias got="git" 
+alias emacs="emacs -nw"
+
+# fix dual disply-monitor settings.
+function fixmonitor() {
+    xrandr --newmode  "1920x1080@60p" 148.50 1920 2008 2052 2200 1080 1084 1089 1125 +hsync +vsyn
+    xrandr --addmode VGA1 1920x1080@60p
+    xrandr --output VGA1 --mode 1920x1080@60p
+}
