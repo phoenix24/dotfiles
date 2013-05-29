@@ -3,9 +3,6 @@
 # setup dotfiles.
 export DOTFILES="$HOME/.dotfiles"
 source $DOTFILES/tools/helpers.sh
-source $DOTFILES/tools/update.sh
-source $DOTFILES/tools/update_check.sh
-
 
 # emacs as default editor.
 export EDITOR="emacs -nw"
