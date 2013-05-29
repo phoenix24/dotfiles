@@ -1,4 +1,4 @@
-* My Dotfiles.
+## My Dotfiles.
 
 
 ### Auto Installer, let's screw up!
