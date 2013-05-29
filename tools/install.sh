@@ -10,11 +10,27 @@ hash git >/dev/null && /usr/bin/env git clone https://github.com/phoenix24/dotfi
 }
 
 if [ -f ~/.zshrc ]; then
-  echo "updating ~/.zshrc"  
+  echo "updating ~/.zshrc ..."
+  echo "#######################################" >> ~/.zshrc
+  echo "#######################################" >> ~/.zshrc
+  echo "# adding csharmarc                     " >> ~/.zshrc
+  echo "if [ -f ~/.dotfiles/.csharma ]; then   " >> ~/.zshrc
+  echo "  source ~/.dotfiles/.csharmarc        " >> ~/.zshrc
+  echo "fi                                     " >> ~/.zshrc
+  echo "#######################################" >> ~/.zshrc
+  echo "#######################################" >> ~/.zshrc
 fi
 
 if [ -f ~/.bashrc ]; then
   echo "updating ~/.bashrc"
+  echo "#######################################" >> ~/.bashrc
+  echo "#######################################" >> ~/.bashrc
+  echo "# adding csharmarc                     " >> ~/.bashrc
+  echo "if [ -f ~/.dotfiles/.csharma ]; then   " >> ~/.bashrc
+  echo "  source ~/.dotfiles/.csharmarc        " >> ~/.bashrc
+  echo "fi                                     " >> ~/.bashrc
+  echo "#######################################" >> ~/.bashrc
+  echo "#######################################" >> ~/.bashrc
 fi
 
 echo "Dotfiles installed + updated successfully! parrrrty!"
