@@ -15,7 +15,7 @@ function update_dotfiles {
     echo "\033[32m Updating Dotfiles ..."
     
     # stash away old dir.
-    OLD_DIR=`pwd`
+    local OLD_DIR=`pwd`
     
     cd $DOTFILES
 
