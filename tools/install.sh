@@ -14,7 +14,7 @@ if [ -f ~/.zshrc ]; then
   echo "#######################################" >> ~/.zshrc
   echo "#######################################" >> ~/.zshrc
   echo "# adding csharmarc                     " >> ~/.zshrc
-  echo "if [ -f ~/.dotfiles/.csharma ]; then   " >> ~/.zshrc
+  echo "if [ -f ~/.dotfiles/.csharmarc ]; then " >> ~/.zshrc
   echo "  source ~/.dotfiles/.csharmarc        " >> ~/.zshrc
   echo "fi                                     " >> ~/.zshrc
   echo "#######################################" >> ~/.zshrc
@@ -26,7 +26,7 @@ if [ -f ~/.bashrc ]; then
   echo "#######################################" >> ~/.bashrc
   echo "#######################################" >> ~/.bashrc
   echo "# adding csharmarc                     " >> ~/.bashrc
-  echo "if [ -f ~/.dotfiles/.csharma ]; then   " >> ~/.bashrc
+  echo "if [ -f ~/.dotfiles/.csharmarc ]; then " >> ~/.bashrc
   echo "  source ~/.dotfiles/.csharmarc        " >> ~/.bashrc
   echo "fi                                     " >> ~/.bashrc
   echo "#######################################" >> ~/.bashrc
