@@ -12,5 +12,6 @@
 
 ;enable column-number mode.
 (setq column-number-mode t)
+(put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
 

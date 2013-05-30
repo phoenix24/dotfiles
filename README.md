@@ -5,12 +5,12 @@
 
 #### via curl
 ```
-  curl -L https://github.com/phoenix24/dotfiles/raw/master/tools/install.sh | sh
+    curl -L https://github.com/phoenix24/dotfiles/raw/master/tools/install.sh | sh
 ```
 
 #### via wget
 ```
-wget --no-check-certificate https://github.com/phoenix24/dotfiles/raw/master/tools/install.sh -O - | sh
+    wget --no-check-certificate https://github.com/phoenix24/dotfiles/raw/master/tools/install.sh -O - | sh
 ```
 
 
@@ -40,3 +40,6 @@ wget --no-check-certificate https://github.com/phoenix24/dotfiles/raw/master/too
     $ dotfiles nuke
     $ dotfiles list
 ```
+
+4. fix emacs settings.
+5. fix screenrc + inputrc settings.
