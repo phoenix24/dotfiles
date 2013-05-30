@@ -17,7 +17,7 @@ wget --no-check-certificate https://github.com/phoenix24/dotfiles/raw/master/too
 ### Manual Installer
 1. clone the dotfiles repo.
 ```
-git clone https://github.com/phoenix24/dotfiles ~/.dotfiles
+    git clone https://github.com/phoenix24/dotfiles ~/.dotfiles
 ```
 
 2. update resource files.
@@ -25,16 +25,18 @@ git clone https://github.com/phoenix24/dotfiles ~/.dotfiles
 
 ### TODO
 1. distinguish between machines.
-2. change commands to -
+
+2. change commands to
 ```
-  $ dotfiles <command>
+    $ dotfiles <command>
 ```
-3. following additional commands -
+
+3. following additional commands
 ```
-  $ dotfiles update
-  $ dotfiles status
-  $ dotfiles reload [helper|alias|paths]
-  $ dotfiles edit <helper|alias|paths>
-  $ dotfiles nuke
-  $ dotfiles list
+    $ dotfiles update
+    $ dotfiles status
+    $ dotfiles reload [helper|alias|paths]
+    $ dotfiles edit <helper|alias|paths>
+    $ dotfiles nuke
+    $ dotfiles list
 ```
