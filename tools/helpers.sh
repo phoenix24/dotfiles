@@ -69,7 +69,10 @@ function __update_dotfiles {
     else 
 	echo "No Updates!"
     fi
-
+    
+    # reload settings.
+    __reload_dotfiles
+    
     # restore back to user dir
     cd $OLD_DIR
 }
