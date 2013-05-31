@@ -25,18 +25,7 @@
 
 ### TODO
 1. distinguish between machines.
-
-
 2. complete commands
-```
-    $ dotfiles update
-    $ dotfiles status
-    $ dotfiles reload [helper|alias|paths]
-    $ dotfiles edit <helper|alias|paths>
-    $ dotfiles nuke
-    $ dotfiles list
-```
-
 3. fix emacs settings.
 4. fix screenrc + inputrc settings.
 5. add support for auto-completion.
