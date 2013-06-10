@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # helper function here!
-
+export OS=`uname`
 
 # main funtion, i do all the tricks.
 function dotfiles {
