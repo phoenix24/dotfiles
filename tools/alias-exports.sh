@@ -4,6 +4,8 @@
 alias got="git" 
 alias emacs="emacs -nw"
 
+alias yeah="echo 'hell yeah!'"
+
 # emacs as default editor.
 export EDITOR="emacs -nw"
 
