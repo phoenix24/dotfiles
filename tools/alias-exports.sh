@@ -2,6 +2,7 @@
 
 # alias
 alias got="git" 
+alias gut="git" 
 alias emacs="emacs -nw"
 
 alias yeah="echo 'hell yeah!'"
