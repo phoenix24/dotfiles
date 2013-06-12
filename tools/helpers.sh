@@ -1,7 +1,6 @@
 #!/bin/sh
 
 # helper function here!
-export OS=`uname`
 
 # main funtion, i do all the tricks.
 function dotfiles {
@@ -17,6 +16,9 @@ function dotfiles {
 
     elif [[ $1 == "update" ]]; then
         __update_dotfiles
+
+    elif [[ $1 == "home" ]]; then
+        __home_dotfiles
 
     elif [[ $1 == "status" ]]; then
         __status_dotfiles
@@ -34,6 +36,12 @@ function dotfiles {
     elif [[ $1 == "list" ]]; then
         __list_dotfiles        
     fi    
+}
+
+# goto dotfiles home.
+function __home_dotfiles {
+    echo "\033[32m Home Dotfiles ..."
+    cd $DOTFILES
 }
 
 # list all.

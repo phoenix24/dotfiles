@@ -1,12 +1,14 @@
 #!/bin/bash
 
 # setup dotfiles.
+export OS=`uname`
 export DOTFILES="$HOME/.dotfiles"
+
 source $DOTFILES/tools/helpers.sh
 source $DOTFILES/tools/functions.sh
 source $DOTFILES/tools/alias-exports.sh
 
-if [[ $OS -eq "Dawrin" ]]; then
+if [[ $OS == "Dawrin" ]]; then
     # java home
     JAVA_HOME=/Library/Java/JavaVirtualMachines/1.7.0.jdk/Contents/Home
 
