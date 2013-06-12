@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # setup dotfiles.
 export OS=`uname`
@@ -8,7 +8,7 @@ source $DOTFILES/tools/helpers.sh
 source $DOTFILES/tools/functions.sh
 source $DOTFILES/tools/alias-exports.sh
 
-if [[ $OS == "Dawrin" ]]; then
+if [[ $OS == "Darwin" ]]; then
     # java home
     JAVA_HOME=/Library/Java/JavaVirtualMachines/1.7.0.jdk/Contents/Home
 
