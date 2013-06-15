@@ -1,6 +1,9 @@
 #!/bin/sh
 
 # helper function here!
+function __auto_complete {
+    reply=(update home status reload edit list)
+}
 
 # main funtion, i do all the tricks.
 function dotfiles {
@@ -35,7 +38,7 @@ function dotfiles {
 
     elif [[ $1 == "list" ]]; then
         __list_dotfiles        
-    fi    
+    fi
 }
 
 # goto dotfiles home.
@@ -89,3 +92,13 @@ function __update_dotfiles {
 function dt {
     dotfiles $@
 }
+
+# Note: with a satic list of auto-complete commands :
+# compctl -k "(cmd1 cmd2 cmd3)" command
+
+# Note: with a dynamic list of auto-complete commands :
+# compctl -K __your_fancy_fucntion command
+
+# add dotfiles autocomplete.
+compctl -K __auto_complete dt
+compctl -K __auto_complete dotfiles
