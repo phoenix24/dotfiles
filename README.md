@@ -24,8 +24,6 @@
 
 
 ### TODO
-1. distinguish between machines.
-2. complete commands
-3. fix emacs settings.
-4. fix screenrc + inputrc settings.
-5. add support for auto-completion.
+1. fix emacs settings
+2. update emacs settings in update/reload.
+3. fix screenrc + inputrc + irssi settings ?
