@@ -93,11 +93,11 @@ function dt {
     dotfiles $@
 }
 
-# Note: with a satic list of auto-complete commands :
+# Note: with a static list of auto-complete commands :
 # compctl -k "(cmd1 cmd2 cmd3)" command
 
 # Note: with a dynamic list of auto-complete commands :
-# compctl -K __your_fancy_fucntion command
+# compctl -K __your_fancy_function command
 
 # add dotfiles autocomplete.
 compctl -K __auto_complete dt
