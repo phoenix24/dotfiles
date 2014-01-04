@@ -22,8 +22,16 @@ else
     export PATH="$PATH:/opt/pycharm-community-3.0.1/bin"
 
     export PATH="$PATH:/opt/scala-sbt"
-    export PATH="$PATH:/opt/apache-ant-1.9.2/bin"
+    export PATH="$PATH:/opt/gradle-1.10/bin"
+    export PATH="$PATH:/opt/apache-ant-1.9.3/bin"
     export PATH="$PATH:/opt/apache-maven-3.1.1/bin"
+
+    # Add RVM to PATH for scripting
+    export PATH="$PATH:$HOME/.rvm/bin"
+    source $HOME/.rvm/scripts/rvm
+ 
+    # Adding play to path.
+    export PATH=$PATH:$HOME/Projects/play-2.2.2-RC1
 
     # mongodb
     # export PATH="$PATH:/opt/mongodb/mongodb-linux-x86_64-2.0.2/bin"
@@ -44,6 +52,3 @@ else
     export WORKON_HOME=$HOME/.virtualenvs
     source /usr/local/bin/virtualenvwrapper.sh
 fi
-
-# Add RVM to PATH for scripting
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
