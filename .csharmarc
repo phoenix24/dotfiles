@@ -21,6 +21,7 @@ else
     export SCALA_HOME="/opt/scala-2.10.3"
     export PATH="$PATH:$SCALA_HOME/bin"
 
+    export PATH="$PATH:/opt/LightTable/"
     export PATH="$PATH:/opt/android-studio/bin"
     export PATH="$PATH:/opt/idea-IC-129.1359/bin"
     export PATH="$PATH:/opt/pycharm-community-3.0.1/bin"
