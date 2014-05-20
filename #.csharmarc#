@@ -1,0 +1,48 @@
+#!/bin/zsh
+
+# setup dotfiles.
+export OS=`uname`
+export DOTFILES="$HOME/.dotfiles"
+
+source $DOTFILES/tools/helpers.sh
+source $DOTFILES/tools/functions.sh
+source $DOTFILES/tools/alias-exports.sh
+
+if [[ $OS == "Darwin" ]]; then
+    # java home
+    JAVA_HOME=/Library/Java/JavaVirtualMachines/1.7.0.jdk/Contents/Home
+
+else
+    # java home    
+    
+
+
+# export JAVA_HOME="/usr/lib/jvm/jdk1.7.0"
+
+    # export PATH="$PATH:/opt/idea/idea-IU-117.798/bin"
+    export PATH="$PATH:$JAVA_HOME/bin"
+    export PATH="$PATH:/opt/apache/apache-ant-1.8.4/bin"
+    export PATH="$PATH:/opt/apache/apache-maven-3.0.4/bin"
+
+    # mongodb
+    export PATH="$PATH:/opt/mongodb/mongodb-linux-x86_64-2.0.2/bin"
+
+    # hadoop
+    # export PATH="$PATH:/opt/apache/hadoop-1.0.1/bin/"
+
+    # pig
+    # export PATH="$PATH:/opt/apache/pig-0.10.0/bin/"
+    # export PIG_CLASSPATH=$HBASE_CLASSPATH:$PIG_CLASSPATH
+
+    # hbase
+    export HBASE_HOME="/opt/apache/hbase-0.94.1"
+    export HBASE_CLASSPATH=`$HBASE_HOME/bin/hbase classpath`
+    export PATH="$PATH:/opt/apache/hbase-0.94.1/bin"
+
+    # virtualenvwrapper settings.
+    export WORKON_HOME=$HOME/.virtualenvs
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
+
+# Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
