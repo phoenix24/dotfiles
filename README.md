@@ -27,3 +27,6 @@
 1. fix emacs settings
 2. update emacs settings in update/reload.
 3. fix screenrc + inputrc + irssi settings ?
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/phoenix24/dotfiles/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
