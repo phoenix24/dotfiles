@@ -24,6 +24,6 @@
 
 
 ### TODO
-1. fix emacs settings
-2. update emacs settings in update/reload.
-3. fix screenrc + inputrc + irssi settings ?
+1. fix emacs config + install
+2. fix irssi config + install
+3. fix screenrc + inputrc ?
