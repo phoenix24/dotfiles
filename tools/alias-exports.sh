@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # alias
-alias got="git" 
-alias gut="git" 
-alias emacs="emacs -nw"
+alias got="git"
+alias gut="git"
+alias emacs="emacs-24.3 -nw"
 
 alias yeah="echo 'hell yeah!'"
 
@@ -12,4 +12,3 @@ export EDITOR="emacs -nw"
 
 # go-lang
 export PATH="$PATH:$HOME/Projects/others/go/bin"
-
