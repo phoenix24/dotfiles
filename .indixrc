@@ -1,4 +1,0 @@
-#!/bin/zsh
-
-alias ish='ssh -i ~/Projects/indix/keys/indix -o GSSAPIAuthentication=no -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
-alias icp='scp -i ~/Projects/indix/keys/indix -o GSSAPIAuthentication=no -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
