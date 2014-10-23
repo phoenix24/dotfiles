@@ -3,12 +3,12 @@
 # alias
 alias got="git"
 alias gut="git"
-alias emacs="emacs-24.3 -nw"
+alias emacs="emacs-24.4 -nw"
 
 alias yeah="echo 'hell yeah!'"
 
 # emacs as default editor.
-export EDITOR="emacs -nw"
+export EDITOR="emacs-24.4 -nw"
 
 # go-lang
 export PATH="$PATH:$HOME/Projects/others/go/bin"
