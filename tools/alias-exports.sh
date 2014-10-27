@@ -3,8 +3,6 @@
 # alias
 alias got="git"
 alias gut="git"
-alias emacs="emacs-24.4 -nw"
-
 alias yeah="echo 'hell yeah!'"
 
 # emacs as default editor.

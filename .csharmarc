@@ -12,6 +12,9 @@ if [[ $OS == "Darwin" ]]; then
     # java home
     JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_55.jdk/Contents/Home
     
+    # treat brew binaries as idefaults.
+    export PATH="/usr/local/bin:$PATH"
+
     # cask
     export PATH="$PATH:$HOME/.cask/bin"
 else
