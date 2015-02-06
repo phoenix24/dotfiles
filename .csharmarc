@@ -17,6 +17,13 @@ if [[ $OS == "Darwin" ]]; then
 
     # cask
     export PATH="$PATH:$HOME/.cask/bin"
+
+    # setup python virtualenv
+    export WORKON_HOME=$HOME/.virtualenvs
+    source /usr/local/bin/virtualenvwrapper.sh
+
+    # gopath
+    export GOPATH=$HOME/Projects/gopher
 else
     # cask
     export PATH="$PATH:$HOME/.cask/bin"
@@ -34,6 +41,9 @@ else
     export SCALA_HOME="/opt/scala-2.10.3"
     export PATH="$PATH:$SCALA_HOME/bin"
 
+    # gopath
+    export GOPATH=$HOME/Projects/gopher
+    
     export PATH="$PATH:/opt/LightTable/"
     export PATH="$PATH:/opt/activator-1.0.13"
     export PATH="$PATH:/opt/android-studio/bin"
@@ -52,6 +62,10 @@ else
  
     # Adding typesafe-activator to path.
     # export PATH=$PATH:$HOME/Projects/activator-1.2.2
+
+    # setup python virtualenv
+    export WORKON_HOME=$HOME/.virtualenvs
+    source /usr/local/bin/virtualenvwrapper.sh
 
     # mongodb
     # export PATH="$PATH:/opt/mongodb/mongodb-linux-x86_64-2.0.2/bin"
