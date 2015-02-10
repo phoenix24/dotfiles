@@ -9,6 +9,9 @@ source $DOTFILES/tools/functions.sh
 source $DOTFILES/tools/alias-exports.sh
 
 if [[ $OS == "Darwin" ]]; then
+    # OPAM configuration
+    #source /Users/administartor/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
     # java home
     JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_55.jdk/Contents/Home
     
@@ -18,12 +21,16 @@ if [[ $OS == "Darwin" ]]; then
     # cask
     export PATH="$PATH:$HOME/.cask/bin"
 
+    # Add RVM to PATH for scripting
+    export PATH="$PATH:$HOME/.rvm/bin"
+
     # setup python virtualenv
     export WORKON_HOME=$HOME/.virtualenvs
     source /usr/local/bin/virtualenvwrapper.sh
 
     # gopath
     export GOPATH=$HOME/Projects/gopher
+
 else
     # cask
     export PATH="$PATH:$HOME/.cask/bin"
@@ -81,8 +88,4 @@ else
     # export HBASE_HOME="/opt/apache/hbase-0.94.1"
     # export HBASE_CLASSPATH=`$HBASE_HOME/bin/hbase classpath`
     # export PATH="$PATH:/opt/apache/hbase-0.94.1/bin"
-
-    # virtualenvwrapper settings.
-    export WORKON_HOME=$HOME/.virtualenvs
-    source /usr/local/bin/virtualenvwrapper.sh
 fi
