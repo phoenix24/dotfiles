@@ -1,0 +1,26 @@
+#!/bin/sh
+
+cd $(dirname $0)/..
+DOT_FILES_DIR=$(pwd -P)
+
+for DOT_FILE in *; do
+    HOME_FILE="$HOME/.$DOT_FILE"
+    [ -d $DOT_FILE ] && DOT_FILE="$DOT_FILE/"
+    DIR_FILE="$DOT_FILES_DIR/$DOT_FILE"
+
+    # skip these files
+    echo $DOT_FILE | egrep -q '(^script/$|\.txt$|\.md$|^brewfile$)' && continue
+
+    echo $DOT_FILE | grep -q '\.sh' &&
+    HOME_FILE="$HOME/.$(echo $DOT_FILE | sed -e 's/\.sh//')"
+
+    if [ -L "$HOME_FILE" ] && ! [ -d $DOT_FILE ]
+    then
+        # its a directory, link.
+        ln -sfv "$DIR_FILE" "$HOME_FILE"
+    else
+        # its a file, clean, link.
+        rm -rv "$HOME_FILE" 2>/dev/null
+        ln -sv "$DIR_FILE" "$HOME_FILE"
+    fi
+done

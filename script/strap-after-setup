@@ -1,0 +1,10 @@
+#!/bin/sh
+
+cd $(dirname $0)/..
+
+if [ "$SHELL" != "/bin/zsh" ]
+then
+  chsh -s /bin/zsh mike
+fi
+
+echo "all done, strapped!"
