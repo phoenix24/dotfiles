@@ -89,4 +89,4 @@ cask "google-chrome"
 cask "beekeeper-studio"
 cask "visual-studio-code"
 
-#cask "meetingbar"
+cask "meetingbar"
