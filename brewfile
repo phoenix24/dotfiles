@@ -75,6 +75,7 @@ cask "adoptopenjdk15"
 
 # productivity 
 cask "zoom"
+cask "figma"
 cask "slack"
 cask "kindle"
 cask "spotify"
