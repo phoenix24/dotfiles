@@ -7,6 +7,7 @@ tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "stripe/stripe-cli"
 tap "teamookla/speedtest"
+tap "buildpacks/tap/pack"
 
 # brew formulae
 brew "gh"
