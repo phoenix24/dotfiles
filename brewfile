@@ -67,6 +67,7 @@ brew "zsh-completions"
 brew "zsh-syntax-highlighting"
 brew "heroku/brew/heroku"
 brew "mysql-client"
+brew "skeema/tap/skeema"
 brew "planetscale/tap/pscale"
 brew "stripe/stripe-cli/stripe"
 
