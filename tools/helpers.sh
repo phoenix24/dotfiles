@@ -117,7 +117,7 @@ function __update_repo {
     
     cd $DOTFILES
 
-    if git pull origin master
+    if git pull --rebase
     then
 	echo "Yeppie! Dotfiles Updated!"
     else 
