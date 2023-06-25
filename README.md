@@ -5,12 +5,12 @@
 
 #### via curl
 ```
-    curl -L https://github.com/phoenix24/dotfiles/raw/master/tools/install.sh | sh
+    curl -L https://github.com/phoenix24/dotfiles/raw/main/tools/install.sh | sh
 ```
 
 #### via wget
 ```
-    wget --no-check-certificate https://github.com/phoenix24/dotfiles/raw/master/tools/install.sh -O - | sh
+    wget --no-check-certificate https://github.com/phoenix24/dotfiles/raw/main/tools/install.sh -O - | sh
 ```
 
 

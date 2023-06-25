@@ -1,4 +1,4 @@
-source ./helpers.sh
+source ./tools/helpers.sh
 
 if [ -d .dotfiles ]; then
     echo "\033[31m  dotfiles already installed!"
