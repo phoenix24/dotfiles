@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# setup dotfiles.
+export OS=`uname`
+export DOTFILES="$HOME/.dotfiles"
+
 # helper function here!
 function __auto_complete {
     reply=(update home status reload edit list)
@@ -8,25 +12,21 @@ function __auto_complete {
 # main funtion, i do all the tricks.
 function dotfiles {
     if [[ $# == 0 ]]; then
-        echo "\033[31m usage : dotfiles -h"
-        echo "\033[32m $ dotfiles \033[33m nuke    "
-        echo "\033[32m $ dotfiles \033[33m list    "
-        echo "\033[32m $ dotfiles \033[33m update  "
-        echo "\033[32m $ dotfiles \033[33m status  "
-        echo "\033[32m $ dotfiles \033[33m configs "
-        echo "\033[32m $ dotfiles \033[33m edit <helper|alias|paths>  "
-        echo "\033[32m $ dotfiles \033[33m reload [helper|alias|paths]"
+        echo "\033[31m usage: dotfiles -h"
+        echo "\033[32m   $ dotfiles \033[33m nuke    "
+        echo "\033[32m   $ dotfiles \033[33m list    "
+        echo "\033[32m   $ dotfiles \033[33m pull"
+        echo "\033[32m   $ dotfiles \033[33m status  "
+        echo "\033[32m   $ dotfiles \033[33m update-all"
+        echo "\033[32m   $ dotfiles \033[33m update-shell"
+        echo "\033[32m   $ dotfiles \033[33m update-configs"
+        echo "\033[32m   $ dotfiles \033[33m edit <helper|alias|paths>  "
+        echo "\033[32m   $ dotfiles \033[33m reload [helper|alias|paths]"
         return 1
-
-    elif [[ $1 == "update" ]]; then
-        __update_dotfiles
 
     elif [[ $1 == "home" ]]; then
         __home_dotfiles
 
-    elif [[ $1 == "config" ]]; then
-        __create_configs
-    
     elif [[ $1 == "status" ]]; then
         __status_dotfiles
     
@@ -38,10 +38,30 @@ function dotfiles {
             echo "opening $2 for edits"
         else
             echo "only [helper|alias|paths] can be edited."
-        fi    
+        fi
 
     elif [[ $1 == "list" ]]; then
-        __list_dotfiles        
+        __list_dotfiles
+
+    elif [[ $1 == "pull" ]]; then
+        __update_repo
+	
+    elif [[ $1 == "update-all" ]]; then
+        __update_repo
+        __update_zshrc
+        __update_bashrc
+        __update_configs
+	
+    elif [[ $1 == "update-shell" ]]; then
+        __update_zshrc
+        __update_bashrc
+	
+    elif [[ $1 == "update-configs" ]]; then
+        __update_configs
+
+    else 
+	# invalid command, invoking help.
+	dotfiles
     fi
 }
 
@@ -63,15 +83,34 @@ function __status_dotfiles {
     zsh_stats
 }
 
-# reload all.
 function __reload_dotfiles {
-    echo "\033[32m Reloading Dotfiles ..."
-    source $DOTFILES/.csharmarc
+    echo "\033[32m reloading dotfiles ..."
+    source $DOTFILES/tools/alias.sh
 }
 
-# update dotfiles.
-function __update_dotfiles {
-    echo "\033[32m Updating Dotfiles ..."
+
+function __update_zshrc {
+    echo "\033[32m updating zshrc ..."
+    if [ -f ~/.zshrc ]; then
+	echo "\033[33m Updating .zshrc ..."
+	echo "                                       " >> ~/.zshrc
+	echo "source ~/.dotfiles/tools/alias.sh      " >> ~/.zshrc
+	echo "                                       " >> ~/.zshrc
+    fi
+}
+
+function __update_bashrc {
+    echo "\033[32m updating bashrc ..."
+    if [ -f ~/.zshrc ]; then
+	echo "\033[33m Updating .bashrc ..."
+	echo "                                       " >> ~/.bashrc
+	echo "source ~/.dotfiles/tools/alias.sh      " >> ~/.bashrc
+	echo "                                       " >> ~/.bashrc
+    fi
+}
+
+function __update_repo {
+    echo "\033[32m updating dotfiles ..."
     
     # stash away old dir.
     local OLD_DIR=`pwd`
@@ -93,52 +132,17 @@ function __update_dotfiles {
 }
 
 # create config symlinks
-function __create_configs {
-    echo "\033[32m Creating Config Symlinks ..."
-    
+function __update_configs {
+    echo "\033[32m creating config symlinks ..."
     echo "\033[32m"
-    echo "\033[32m creating symlinks for .gitconfig"
-    ln -sf ~/.dotfiles/gitconfig ~/.gitconfig 
 
-    echo "\033[32m creating symlinks for .gitignore"
-    ln -sf ~/.dotfiles/gitignore ~/.gitignore
+    for file in `ls $DOTFILES/configs`
+    do
+	echo "\033[32m creating symlinks for .$file"
+	ln -sf $DOTFILES/configs/$file $HOME/.$file
+    done
 
-    echo "\033[32m creating symlinks for .gitignore_global"
-    ln -sf ~/.dotfiles/gitignore_global ~/.gitignore_global
-
-    echo "\033[32m creating symlinks for .emacs"
-    ln -sf ~/.dotfiles/emacs ~/.emacs
-
-    echo "\033[32m creating symlinks for .irssi"
-    ln -sf ~/.dotfiles/irssi ~/.irssi
-
-    echo "\033[32m creating symlinks for .curlrc"
-    ln -sf ~/.dotfiles/curlrc ~/.curlrc 
-    
-    echo "\033[32m creating symlinks for .vimrc"
-    ln -sf ~/.dotfiles/screenrc ~/.vimrc
-    
-    echo "\033[32m creating symlinks for .wgetrc"
-    ln -sf ~/.dotfiles/screenrc ~/.wgetrc
-
-    echo "\033[32m creating symlinks for .screenrc"
-    ln -sf ~/.dotfiles/screenrc ~/.screenrc
-
-    echo "\033[32m creating symlinks for .editorconfig"
-    ln -sf ~/.dotfiles/editorconfig ~/.editorconfig
+    # reload settings.
+    __reload_dotfiles    
 }
 
-# for me lazy, alias to main.
-function dt {
-    dotfiles $@
-}
-
-# Note: with a static list of auto-complete commands :
-# compctl -k "(cmd1 cmd2 cmd3)" command
-
-# Note: with a dynamic list of auto-complete commands :
-# compctl -K __your_fancy_function command
-
-# add dotfiles autocomplete.
-compctl -K __auto_complete dt
-compctl -K __auto_complete dotfiles

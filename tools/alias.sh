@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# import helper functions
+source ~/.dotfiles/tools/helpers.sh
+
 # alias
 alias got="git"
 alias gut="git"
@@ -10,3 +13,4 @@ export EDITOR="emacs-24.4 -nw"
 
 # go-lang
 export PATH="$PATH:$HOME/Projects/others/go/bin"
+
