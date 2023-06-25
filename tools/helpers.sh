@@ -119,9 +119,9 @@ function __update_repo {
 
     if git pull --rebase
     then
-	echo "Yeppie! Dotfiles Updated!"
+	echo " * Yeppie! Dotfiles Updated!"
     else 
-	echo "No Updates!"
+	echo " * No Updates!"
     fi
     
     # reload settings.
