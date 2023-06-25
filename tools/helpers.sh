@@ -13,6 +13,7 @@ function dotfiles {
         echo "\033[32m $ dotfiles \033[33m list    "
         echo "\033[32m $ dotfiles \033[33m update  "
         echo "\033[32m $ dotfiles \033[33m status  "
+        echo "\033[32m $ dotfiles \033[33m configs "
         echo "\033[32m $ dotfiles \033[33m edit <helper|alias|paths>  "
         echo "\033[32m $ dotfiles \033[33m reload [helper|alias|paths]"
         return 1
@@ -23,6 +24,9 @@ function dotfiles {
     elif [[ $1 == "home" ]]; then
         __home_dotfiles
 
+    elif [[ $1 == "config" ]]; then
+        __create_configs
+    
     elif [[ $1 == "status" ]]; then
         __status_dotfiles
     
@@ -86,6 +90,42 @@ function __update_dotfiles {
     
     # restore back to user dir
     cd $OLD_DIR
+}
+
+# create config symlinks
+function __create_configs {
+    echo "\033[32m Creating Config Symlinks ..."
+    
+    echo "\033[32m"
+    echo "\033[32m creating symlinks for .gitconfig"
+    ln -sf ~/.dotfiles/gitconfig ~/.gitconfig 
+
+    echo "\033[32m creating symlinks for .gitignore"
+    ln -sf ~/.dotfiles/gitignore ~/.gitignore
+
+    echo "\033[32m creating symlinks for .gitignore_global"
+    ln -sf ~/.dotfiles/gitignore_global ~/.gitignore_global
+
+    echo "\033[32m creating symlinks for .emacs"
+    ln -sf ~/.dotfiles/emacs ~/.emacs
+
+    echo "\033[32m creating symlinks for .irssi"
+    ln -sf ~/.dotfiles/irssi ~/.irssi
+
+    echo "\033[32m creating symlinks for .curlrc"
+    ln -sf ~/.dotfiles/curlrc ~/.curlrc 
+    
+    echo "\033[32m creating symlinks for .vimrc"
+    ln -sf ~/.dotfiles/screenrc ~/.vimrc
+    
+    echo "\033[32m creating symlinks for .wgetrc"
+    ln -sf ~/.dotfiles/screenrc ~/.wgetrc
+
+    echo "\033[32m creating symlinks for .screenrc"
+    ln -sf ~/.dotfiles/screenrc ~/.screenrc
+
+    echo "\033[32m creating symlinks for .editorconfig"
+    ln -sf ~/.dotfiles/editorconfig ~/.editorconfig
 }
 
 # for me lazy, alias to main.
