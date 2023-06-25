@@ -110,7 +110,7 @@ function __update_bashrc {
 }
 
 function __update_repo {
-    echo "\033[32m updating dotfiles ..."
+    echo "\033[32mupdating dotfiles ..."
     
     # stash away old dir.
     local OLD_DIR=`pwd`
@@ -119,9 +119,9 @@ function __update_repo {
 
     if git pull --rebase
     then
-	echo " * Yeppie! Dotfiles Updated!"
+	echo "* yeppie! dotfiles updated!"
     else 
-	echo " * No Updates!"
+	echo "* no updates!"
     fi
     
     # reload settings.
