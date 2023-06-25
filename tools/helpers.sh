@@ -34,11 +34,7 @@ function dotfiles {
         __reload_dotfiles
     
     elif [[ $1 == "edit" ]]; then
-        if [[ $2 == "helper" || $2 == "alias" || $2 == "paths" ]]; then
-            echo "opening $2 for edits"
-        else
-            echo "only [helper|alias|paths] can be edited."
-        fi
+	__edit_dotfiles $2
 
     elif [[ $1 == "list" ]]; then
         __list_dotfiles
@@ -65,15 +61,28 @@ function dotfiles {
     fi
 }
 
-# goto dotfiles home.
 function __home_dotfiles {
     echo "\033[32m Home Dotfiles ..."
     cd $DOTFILES
 }
 
-# list all.
 function __list_dotfiles {
     echo "\033[32m Status Dotfiles ..."
+}
+
+function __edit_dotfiles {
+    echo "opening '$1' for edits"
+    if [[ $1 == "alias" ]]; then
+	emacs $DOTFILES/tools/alias.sh
+    
+    elif [[ $1 == "helper" ]]; then
+	emacs $DOTFILES/tools/helpers.sh
+    else
+        echo "invalid dotfile edit argument"
+    fi
+
+    # reload settings.
+    __reload_dotfiles
 }
 
 # status all.

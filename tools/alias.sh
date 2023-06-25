@@ -5,6 +5,8 @@ source ~/.dotfiles/tools/helpers.sh
 
 # alias
 alias got="git"
+alias gor="git"
+alias goy="git"
 alias gut="git"
 alias yeah="echo 'hell yeah!'"
 
