@@ -13,6 +13,7 @@ function __auto_complete {
 function dotfiles {
     if [[ $# == 0 ]]; then
         echo "\033[31m usage: dotfiles -h"
+        echo "\033[32m   $ dotfiles \033[33m home    "
         echo "\033[32m   $ dotfiles \033[33m nuke    "
         echo "\033[32m   $ dotfiles \033[33m list    "
         echo "\033[32m   $ dotfiles \033[33m pull"
