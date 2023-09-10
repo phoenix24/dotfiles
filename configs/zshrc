@@ -183,3 +183,10 @@ esac
 
 
 ############################################################################
+
+# bun completions
+[ -s "/Users/phoenix24/.bun/_bun" ] && source "/Users/phoenix24/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
