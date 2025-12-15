@@ -5,9 +5,9 @@
 ;something that humans like.
 ;(setq behave-like-something-actually-usable-by-humans t)
 
-
 ;enable line-numbers mode
 ;(global-linum-mode t)
+(global-display-line-numbers-mode t)
 (setq line-number-mode t)
 
 ;enable column-number mode.

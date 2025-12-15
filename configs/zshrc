@@ -107,29 +107,6 @@ export NVM_DIR="$HOME/.nvm"
 # https://github.com/nvm-sh/nvm#nvmrc
 autoload -U add-zsh-hook
 
-load-nvmrc() {
-  local nvmrc_path
-  nvmrc_path="$(nvm_find_nvmrc)"
-
-  if [ -n "$nvmrc_path" ]; then
-    local nvmrc_node_version
-    nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-
-    if [ "$nvmrc_node_version" = "N/A" ]; then
-      nvm install
-    elif [ "$nvmrc_node_version" != "$(nvm version)" ]; then
-      nvm use
-    fi
-  elif [ -n "$(PWD=$OLDPWD nvm_find_nvmrc)" ] && [ "$(nvm version)" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
-    nvm use default
-  fi
-}
-
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
-
-
 ############################################################################
 # add jenv settings
 export PATH="$HOME/.jenv/bin:$PATH"
@@ -137,7 +114,8 @@ eval "$(jenv init -)"
 
 
 ############################################################################
-# add pyenv settings
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
 
@@ -183,10 +161,31 @@ esac
 
 
 ############################################################################
-
 # bun completions
 [ -s "/Users/phoenix24/.bun/_bun" ] && source "/Users/phoenix24/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="/usr/local/opt/go@1.21/bin:$PATH"
+[[ -s "/Users/phoenix24/.gvm/scripts/gvm" ]] && source "/Users/phoenix24/.gvm/scripts/gvm"
+
+
+
+# Added by pcb installer
+export PATH="/Users/phoenix24/.diode/bin:$PATH"
+
+# Added by diode installer
+fpath=("/Users/phoenix24/.diode/_pcb:A:h" $fpath)
+autoload -Uz compinit && compinit
+
+
+# Added for new ruby version
+export GEM_HOME=$HOME/.gem
+export PATH=$GEM_HOME/bin:$PATH
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+
+. "$HOME/.turso/env"
+
+# Added by Antigravity
+export PATH="/Users/phoenix24/.antigravity/antigravity/bin:$PATH"

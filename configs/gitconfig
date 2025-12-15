@@ -89,3 +89,11 @@
         pretty = %C(yellow)%h%Creset %s %C(red)(%an, %cr)%Creset  
 [init]
 	defaultBranch = main
+[diff "lockb"]
+	textconv = bun
+	binary = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
