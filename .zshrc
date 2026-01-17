@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/phoenix24/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -98,6 +98,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+
+############################################################################
+source ~/.alias
+
+
 ############################################################################
 # add nvm settings
 export NVM_DIR="$HOME/.nvm"
@@ -107,44 +112,6 @@ export NVM_DIR="$HOME/.nvm"
 # https://github.com/nvm-sh/nvm#nvmrc
 autoload -U add-zsh-hook
 
-############################################################################
-# add jenv settings
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
-
-
-############################################################################
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
-
-############################################################################
-# add gobin
-export GOBIN=$HOME/go/bin
-export PATH=$GOBIN:$PATH
-
-
-############################################################################
-# add wasmer
-export WASMER_DIR="$HOME/.wasmer"
-[ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
-
-
-############################################################################
-# add build-pack auto-complete
-\. $(pack completion --shell zsh)
-
-
-############################################################################
-# import custom alias
-source ~/.dotfiles/tools/alias.sh
-
-
-############################################################################
-# import custom helpers
-source ~/.dotfiles/tools/helpers.sh
-
 
 ############################################################################
 # update search paths
@@ -153,37 +120,5 @@ export PATH="$HOME/.local/bin":$PATH
 
 
 ############################################################################
-export PNPM_HOME="$HOME/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-
-
-############################################################################
-# bun completions
-[ -s "/Users/phoenix24/.bun/_bun" ] && source "/Users/phoenix24/.bun/_bun"
-
-# bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-export PATH="/usr/local/opt/go@1.21/bin:$PATH"
-[[ -s "/Users/phoenix24/.gvm/scripts/gvm" ]] && source "/Users/phoenix24/.gvm/scripts/gvm"
-
-# Added by pcb installer
-export PATH="/Users/phoenix24/.diode/bin:$PATH"
-
-# Added by diode installer
-fpath=("/Users/phoenix24/.diode/_pcb:A:h" $fpath)
-autoload -Uz compinit && compinit
-
-
-# Added for new ruby version
-export GEM_HOME=$HOME/.gem
-export PATH=$GEM_HOME/bin:$PATH
-export PATH="/usr/local/opt/ruby/bin:$PATH"
-
-. "$HOME/.turso/env"
-
-# Added by Antigravity
-export PATH="/Users/phoenix24/.antigravity/antigravity/bin:$PATH"

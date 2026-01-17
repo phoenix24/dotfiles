@@ -28,7 +28,7 @@
 	cl           = clone
 	st           = status
 	ci           = commit
-        df           = diff
+	df           = diff
 	pr           = pull --rebase
 	lg	     = log
 	br	     = branch
