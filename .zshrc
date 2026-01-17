@@ -170,8 +170,6 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="/usr/local/opt/go@1.21/bin:$PATH"
 [[ -s "/Users/phoenix24/.gvm/scripts/gvm" ]] && source "/Users/phoenix24/.gvm/scripts/gvm"
 
-
-
 # Added by pcb installer
 export PATH="/Users/phoenix24/.diode/bin:$PATH"
 
