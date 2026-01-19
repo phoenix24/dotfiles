@@ -1,11 +1,14 @@
 #!/bin/bash
 
-# add alias
+# git alias
 alias got="git"
 alias gor="git"
 alias goy="git"
 alias gut="git"
 alias yeah="echo 'hell yeah!'"
+
+# other alias
+alias ip="curl ifconfig.me/ip"
 
 # config
 alias config="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
