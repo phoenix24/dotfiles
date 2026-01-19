@@ -11,4 +11,5 @@ alias yeah="echo 'hell yeah!'"
 alias config="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 
 # update editor
-export EDITOR="emacs"
+alias emacs="emacs -nw"
+export EDITOR="emacs -nw"
