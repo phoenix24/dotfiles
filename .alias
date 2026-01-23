@@ -9,6 +9,7 @@ alias yeah="echo 'hell yeah!'"
 
 # other alias
 alias ip="curl ifconfig.me/ip"
+alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 
 # config
 alias config="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
