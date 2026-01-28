@@ -26,9 +26,10 @@
 	d            = difftool
 	co	     = checkout
 	cl           = clone
-	st           = status
+	st           = status -sb
 	ci           = commit
 	df           = diff
+	dc           = diff --cached
 	pr           = pull --rebase
 	lg	     = log
 	br	     = branch
