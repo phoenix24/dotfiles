@@ -1,6 +1,3 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -98,13 +95,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-
 ############################################################################
 source ~/.alias
 
 
 ############################################################################
-# add nvm settings
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
@@ -117,6 +112,13 @@ autoload -U add-zsh-hook
 # update search paths
 export PATH="/usr/local/sbin:$PATH"
 export PATH="$HOME/.local/bin":$PATH
+export PATH="/opt/homebrew/bin:$PATH"
+
+
+############################################################################
+# Add deno completions to search path
+if [[ ":$FPATH:" != *":$HOME/.zsh/completions:"* ]]; then export FPATH="$HOME/.zsh/completions:$FPATH"; fi
+source "$HOME/.deno/env"
 
 
 ############################################################################
@@ -125,3 +127,12 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # bun completions
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+
+
+############################################################################
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+############################################################################
+export PATH="$HOME/Projects/forges/withtorq/torq-engine/target/debug":$PATH
+export PATH="$HOME/Projects/forges/withfeta/feta-cloud/projects/cli/build":$PATH
