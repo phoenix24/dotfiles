@@ -7,6 +7,19 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "outline_panel": {
+    "dock": "left"
+  },
+  "agent_servers": {
+    "claude-acp": {
+      "type": "registry"
+    },
+    "codex-acp": {
+      "type": "registry"
+    }
+  },
+  "proxy": "",
+  "disable_ai": false,
   "git_panel": {
     "dock": "left"
   },
@@ -14,11 +27,14 @@
     "dock": "left"
   },
   "agent": {
+    "terminal_init_command": "",
+    "play_sound_when_agent_done": "always",
     "dock": "right",
     "favorite_models": [],
     "model_parameters": []
   },
   "project_panel": {
+    "hide_gitignore": true,
     "git_status_indicator": false,
     "scrollbar": {
       "horizontal_scroll": true
